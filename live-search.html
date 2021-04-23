@@ -1,0 +1,55 @@
+<body>
+<style>
+    body{
+        background-color: #DDD;
+    }
+    #input_search{
+        padding: 1em;
+        border: 4px ridge rgba(179, 73, 31, 0.37);
+        width: 30%;
+        left: 65%;
+        position: absolute;
+    }
+    #div_output{
+      position: absolute;
+      background-color: whitesmoke;
+      top:8.5%;
+      left: 65%;
+      
+
+    }
+</style>
+
+    <label>
+        <input id="input_search" type="text" 
+        placeholder="Search a person..." 
+        onkeyup="search()" >
+
+        <div id="div_output"></div>
+    </label>
+
+ <script>
+
+     let people = [
+            "Emilia",
+            "Andrei",
+            "Maria",
+            "Ion",
+            "Anna",
+            "Petru",
+            "Denis" ]
+        
+     function search() {
+         let fragment = input_search.value.trim().toUpperCase()
+
+         div_output.innerHTML = ``
+
+         for( let i = 0; i < people.length; i++ ) {
+            if( people[i].toUpperCase().startsWith(fragment) && fragment.length > 0) {
+
+             div_output.innerHTML += `${people[i]} <br>`}
+            }
+        }
+
+ </script>
+</body>
